@@ -7,6 +7,7 @@ export default function App() {
       <Text>Open up App.js to start working on your app!
       Bonjour</Text>
       <Text>Salut</Text>
+      <Text>Salut</Text>
       <StatusBar style="auto" />
     </View>
   );
