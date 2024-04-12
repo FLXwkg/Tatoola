@@ -1,33 +1,36 @@
 const express = require('express');
-const mysql = require('mysql2/promise');
+const bodyParser = require('body-parser');
+const usersRouter = require('./routes/users');
+const addressesRouter = require('./routes/addresses');
 
 // Création de l'application Express
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configuration de la connexion à la base de données MySQL
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'votre_nom_utilisateur',
-  password: 'votre_mot_de_passe',
-  database: 'votre_base_de_données',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
-});
+// Middleware
+app.use(bodyParser.json());
 
 // Définition des routes
 app.get('/', async (req, res) => {
-  try {
-    const [rows, fields] = await pool.query('SELECT * FROM ma_table');
-    res.json(rows);
-  } catch (error) {
-    console.error('Erreur lors de la récupération des données:', error);
-    res.status(500).send('Erreur serveur');
-  }
+  res.send('Welcome to Tatoola API!');
+});
+
+/*
+
+app.use('/pictures', picturesRouter);
+app.use('/styles', stylesRouter);
+app.use('/tattoos', tattoosRouter);
+*/
+
+app.use('/users', usersRouter);
+app.use('/addresses', addressesRouter);
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Internal server error' });
 });
 
 // Démarrage du serveur
 app.listen(PORT, () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
+  console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
