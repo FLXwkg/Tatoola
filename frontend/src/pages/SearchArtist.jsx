@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
-import TattooList from '../components/TattooList';
+import TattooList from '../components/tattoo/TattooList';
 
-const SearchPage = () => {
+const SearchArtist = () => {
   // State pour gérer les critères de recherche
   const [searchCriteria, setSearchCriteria] = useState({
     location: '',
@@ -26,4 +26,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default SearchArtist;

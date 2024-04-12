@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/header/Header';
 import SearchBar from '../components/SearchBar';
-import TattooInspiration from '../components/TattooInspiration';
+import TattooInspiration from '../components/tattoo/TattooInspiration';
 import LatestArticles from '../components/LatestArticles';
 import NearbyTattooists from '../components/NearbyTattooists';
 import Footer from '../components/footer/Footer';
