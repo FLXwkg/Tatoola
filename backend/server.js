@@ -4,6 +4,7 @@ const usersRouter = require('./routes/users');
 const addressesRouter = require('./routes/addresses');
 const stylesRouter = require('./routes/styles')
 const picturesRouter = require('./routes/pictures')
+const tattoosRouter = require('./routes/tattoos')
 
 // Création de l'application Express
 const app = express();
@@ -17,15 +18,12 @@ app.get('/', async (req, res) => {
   res.send('Welcome to Tatoola API!');
 });
 
-/*
-
-app.use('/tattoos', tattoosRouter);
-*/
 
 app.use('/styles', stylesRouter);
 app.use('/users', usersRouter);
 app.use('/addresses', addressesRouter);
 app.use('/pictures', picturesRouter);
+app.use('/tattoos', tattoosRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
