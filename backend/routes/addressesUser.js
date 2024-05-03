@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET user_addresses by ID of user
-router.get('/:id', async (req, res) => {
+router.get('/:idAddress/:idUser', async (req, res) => {
   try {
     const userId = req.params.id;
     const [rows] = await db.query('SELECT * FROM user_address WHERE id_user = ?', [userId]);
@@ -49,9 +49,21 @@ router.post('/', addressUserValidationRules, validateInputs, async (req, res) =>
 });
 
 // PUT update user_address
-router.put('/:id', addressUserValidationRules, validateInputs, async (req, res) => {
+router.put('/:idAddress/:idUser', addressUserValidationRules, validateInputs, async (req, res) => {
   try {
+    const addressId = req.params.idAddress;
     const userId = req.params.id;
+
+    // Check if the record exists
+    const [existingRows] = await db.query(
+      'SELECT * FROM user_address WHERE id_address = ? AND id_user = ?',
+      [addressId, userId]
+    );
+
+    // If the record doesn't exist, return an error
+    if (existingRows.length === 0) {
+      return res.status(404).json({ error: 'User_address not found' });
+    }
     const { id_user, id_address } = req.body;
     await db.query(
       'UPDATE user_address SET id_user = ?, id_address = ? WHERE id_user = ?',
@@ -65,9 +77,21 @@ router.put('/:id', addressUserValidationRules, validateInputs, async (req, res) 
 });
 
 // DELETE user_address
-router.delete('/:id', async (req, res) => {
+router.delete('/:idAddress/:idUser', async (req, res) => {
   try {
+    const addressId = req.params.idAddress;
     const userId = req.params.id;
+
+    // Check if the record exists
+    const [existingRows] = await db.query(
+      'SELECT * FROM user_address WHERE id_address = ? AND id_user = ?',
+      [addressId, userId]
+    );
+
+    // If the record doesn't exist, return an error
+    if (existingRows.length === 0) {
+      return res.status(404).json({ error: 'User_address not found' });
+    }
     await db.query('DELETE FROM user_address WHERE id_user = ?', [userId]);
     res.status(200).json({ message: 'User_address deleted successfully' });
   } catch (error) {

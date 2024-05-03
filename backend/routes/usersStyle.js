@@ -19,11 +19,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET user_style by ID of user
-router.get('/:id', async (req, res) => {
+// GET user_style by ID of style
+router.get('/:idStyle', async (req, res) => {
   try {
-    const userId = req.params.id;
-    const [rows] = await db.query('SELECT * FROM user_style WHERE id_user = ?', [userId]);
+    const styleId = req.params.idStyle;
+    const [rows] = await db.query('SELECT * FROM user_style WHERE id_style = ?', [styleId]);
     if (rows.length === 0) {
       return res.status(404).json({ error: 'No styles found for this user.' });
     }
@@ -49,12 +49,12 @@ router.post('/', styleUserValidationRules, validateInputs, async (req, res) => {
 });
 
 // PUT update user_style
-router.put('/:idStyle/:idUser', styleUserValidationRules, validateInputs, async (req, res) => {
+router.put('/:idUser/:idStyle', styleUserValidationRules, validateInputs, async (req, res) => {
   try {
-    const styleId = req.params.idStyle;
     const userId = req.params.idUser;
+    const styleId = req.params.idStyle;
     const { id_user, id_style } = req.body;
-
+    
     // Check if the record exists
     const [existingRows] = await db.query(
       'SELECT * FROM user_style WHERE id_style = ? AND id_user = ?',
@@ -65,10 +65,9 @@ router.put('/:idStyle/:idUser', styleUserValidationRules, validateInputs, async 
     if (existingRows.length === 0) {
       return res.status(404).json({ error: 'User_style not found' });
     }
-
     await db.query(
-      'UPDATE user_style SET id_user = ?, id_style = ? WHERE id_user = ? AND id_style = ?',
-      [id_user, id_style, userId, styleId]
+      'UPDATE user_style SET id_user = ?, id_style = ? WHERE id_style = ? AND id_user = ?',
+      [id_user, id_style, styleId, userId]
     );
     res.status(200).json({ message: 'User_style updated successfully' });
   } catch (error) {
@@ -78,11 +77,10 @@ router.put('/:idStyle/:idUser', styleUserValidationRules, validateInputs, async 
 });
 
 // DELETE user_style
-router.delete('/:idStyle/:idUser', async (req, res) => {
+router.delete('/:idUser/:idStyle', async (req, res) => {
   try {
-    const styleId = req.params.idStyle;
     const userId = req.params.idUser;
-
+    const styleId = req.params.idStyle;
     // Check if the record exists
     const [existingRows] = await db.query(
       'SELECT * FROM user_style WHERE id_style = ? AND id_user = ?',
@@ -93,8 +91,7 @@ router.delete('/:idStyle/:idUser', async (req, res) => {
     if (existingRows.length === 0) {
       return res.status(404).json({ error: 'User_style not found' });
     }
-
-    await db.query('DELETE FROM user_style WHERE id_user = ? AND id_style = ?', [userId, styleId]);
+    await db.query('DELETE FROM user_style WHERE id_style = ? AND id_user = ?', [styleId, userId]);
     res.status(200).json({ message: 'User_style deleted successfully' });
   } catch (error) {
     console.error('Error deleting User_style: ', error);

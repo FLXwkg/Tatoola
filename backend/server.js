@@ -4,6 +4,7 @@ const usersRouter = require('./routes/users');
 const addressesRouter = require('./routes/addresses');
 const addressesUserRouter = require('./routes/addressesUser');
 const stylesUserRouter = require('./routes/stylesUser');
+const usersStyleRouter = require('./routes/usersStyle');
 const stylesRouter = require('./routes/styles')
 const picturesRouter = require('./routes/pictures')
 const tattoosRouter = require('./routes/tattoos')
@@ -24,6 +25,7 @@ app.get('/', async (req, res) => {
 app.use('/styles', stylesRouter);
 app.use('/styles_users', stylesUserRouter);
 app.use('/users', usersRouter);
+app.use('/users_styles', usersStyleRouter);
 app.use('/addresses_users', addressesUserRouter);
 app.use('/addresses', addressesRouter);
 app.use('/pictures', picturesRouter);
