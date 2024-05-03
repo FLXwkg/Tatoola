@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('../db');
 const { validateInputs } = require('../middlewares/validation');
-const { userAddressValidationRules } = require('../middlewares/userAddressValidation');
+const { addressUserValidationRules } = require('../middlewares/addressUserValidation');
 
 const router = express.Router();
 
@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST new user_address
-router.post('/', userAddressValidationRules, validateInputs, async (req, res) => {
+router.post('/', addressUserValidationRules, validateInputs, async (req, res) => {
   try {
     const { id_user, id_address } = req.body;
     const result = await db.query('INSERT INTO user_address (id_user, id_address) VALUES (?, ?)',
@@ -48,7 +48,7 @@ router.post('/', userAddressValidationRules, validateInputs, async (req, res) =>
 });
 
 // PUT update user_address
-router.put('/:id', userAddressValidationRules, validateInputs, async (req, res) => {
+router.put('/:id', addressUserValidationRules, validateInputs, async (req, res) => {
   try {
     const userId = req.params.id;
     const { id_user, id_address } = req.body;
