@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     }
     res.status(200).json(rows);
   } catch (error) {
-    console.error('Error fetching address: ', error);
+    console.error('Error fetching User_address: ', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
     }
     res.status(200).json(rows);
   } catch (error) {
-    console.error('Error fetching address: ', error);
+    console.error('Error fetching User_address: ', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -40,9 +40,10 @@ router.post('/', addressUserValidationRules, validateInputs, async (req, res) =>
     const { id_user, id_address } = req.body;
     const result = await db.query('INSERT INTO user_address (id_user, id_address) VALUES (?, ?)',
       [id_user, id_address]);
-    res.status(200).json({ message: 'Address created successfully', id: result[0].insertId });
+    res.status(200).json({ message: 'User_address created successfully', id_user: id_user, 
+    id_address: id_address  });
   } catch (error) {
-    console.error('Error creating new address: ', error);
+    console.error('Error creating new User_address: ', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -56,9 +57,9 @@ router.put('/:id', addressUserValidationRules, validateInputs, async (req, res) 
       'UPDATE user_address SET id_user = ?, id_address = ? WHERE id_user = ?',
       [id_user, id_address, userId]
     );
-    res.status(200).json({ message: 'Address updated successfully' });
+    res.status(200).json({ message: 'User_address updated successfully' });
   } catch (error) {
-    console.error('Error updating address: ', error);
+    console.error('Error updating User_address: ', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -68,9 +69,9 @@ router.delete('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
     await db.query('DELETE FROM user_address WHERE id_user = ?', [userId]);
-    res.status(200).json({ message: 'Address deleted successfully' });
+    res.status(200).json({ message: 'User_address deleted successfully' });
   } catch (error) {
-    console.error('Error deleting address: ', error);
+    console.error('Error deleting User_address: ', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

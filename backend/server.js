@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const usersRouter = require('./routes/users');
 const addressesRouter = require('./routes/addresses');
 const addressesUserRouter = require('./routes/addressesUser');
+const stylesUserRouter = require('./routes/stylesUser');
 const stylesRouter = require('./routes/styles')
 const picturesRouter = require('./routes/pictures')
 const tattoosRouter = require('./routes/tattoos')
@@ -21,6 +22,7 @@ app.get('/', async (req, res) => {
 
 
 app.use('/styles', stylesRouter);
+app.use('/styles_users', stylesUserRouter);
 app.use('/users', usersRouter);
 app.use('/addresses_users', addressesUserRouter);
 app.use('/addresses', addressesRouter);
