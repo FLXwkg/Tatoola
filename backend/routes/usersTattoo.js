@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM user_tattoo');
     if (rows.length === 0) {
-      return res.status(404).json({ error: 'No users linked to tattoos.' });
+      return res.status(404).json({ error: 'No tattoos linked to users.' });
     }
     res.status(200).json(rows);
   } catch (error) {
@@ -20,12 +20,12 @@ router.get('/', async (req, res) => {
 });
 
 // GET user_tattoo by ID of user
-router.get('/:idTattoo', async (req, res) => {
+router.get('/:idUser', async (req, res) => {
   try {
-    const tattooId = req.params.idTattoo;
-    const [rows] = await db.query('SELECT * FROM user_tattoo WHERE id_tattoo = ?', [tattooId]);
+    const userId = req.params.idUser;
+    const [rows] = await db.query('SELECT * FROM user_tattoo WHERE id_user = ?', [userId]);
     if (rows.length === 0) {
-      return res.status(404).json({ error: 'No users found for this tattoo.' });
+      return res.status(404).json({ error: 'No tattoos found for this user.' });
     }
     res.status(200).json(rows);
   } catch (error) {
@@ -38,8 +38,8 @@ router.get('/:idTattoo', async (req, res) => {
 router.post('/', tattooUserValidationRules, validateInputs, async (req, res) => {
   try {
     const { id_user, id_tattoo } = req.body;
-    const result = await db.query('INSERT INTO user_tattoo (id_tattoo, id_user) VALUES (?, ?)',
-      [id_tattoo, id_user]);
+    const result = await db.query('INSERT INTO user_tattoo (id_user, id_tattoo) VALUES (?, ?)',
+      [id_user, id_tattoo]);
     res.status(200).json({ message: 'User_tattoo created successfully', id_user: id_user, 
     id_tattoo: id_tattoo });
   } catch (error) {
@@ -49,7 +49,7 @@ router.post('/', tattooUserValidationRules, validateInputs, async (req, res) => 
 });
 
 // PUT update user_tattoo
-router.put('/:idTattoo/:idUser', tattooUserValidationRules, validateInputs, async (req, res) => {
+router.put('/:idUser/:idTattoo', tattooUserValidationRules, validateInputs, async (req, res) => {
   try {
     const tattooId = req.params.idTattoo;
     const userId = req.params.idUser;
@@ -57,8 +57,8 @@ router.put('/:idTattoo/:idUser', tattooUserValidationRules, validateInputs, asyn
 
     // Check if the record exists
     const [existingRows] = await db.query(
-      'SELECT * FROM user_tattoo WHERE id_tattoo = ? AND id_user = ?',
-      [tattooId, userId]
+      'SELECT * FROM user_tattoo WHERE id_user = ? AND id_tattoo = ?',
+      [userId, tattooId]
     );
 
     // If the record doesn't exist, return an error
@@ -78,7 +78,7 @@ router.put('/:idTattoo/:idUser', tattooUserValidationRules, validateInputs, asyn
 });
 
 // DELETE user_tattoo
-router.delete('/:idTattoo/:idUser', async (req, res) => {
+router.delete('/:idUser/:idTattoo', async (req, res) => {
   try {
     const tattooId = req.params.idTattoo;
     const userId = req.params.idUser;
@@ -94,7 +94,7 @@ router.delete('/:idTattoo/:idUser', async (req, res) => {
       return res.status(404).json({ error: 'User_tattoo not found' });
     }
 
-    await db.query('DELETE FROM user_tattoo WHERE id_tattoo = ? AND id_user = ?', [tattooId, userId]);
+    await db.query('DELETE FROM user_tattoo WHERE id_user = ? AND id_tattoo = ?', [userId, tattooId]);
     res.status(200).json({ message: 'User_tattoo deleted successfully' });
   } catch (error) {
     console.error('Error deleting User_tattoo: ', error);

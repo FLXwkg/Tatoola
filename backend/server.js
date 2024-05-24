@@ -4,11 +4,12 @@ const usersRouter = require('./routes/users');
 const addressesRouter = require('./routes/addresses');
 const addressesUserRouter = require('./routes/addressesUser');
 const stylesUserRouter = require('./routes/stylesUser');
-const usersStyleRouter = require('./routes/UsersStyle');
+const usersStyleRouter = require('./routes/usersStyle');
 const stylesRouter = require('./routes/styles')
 const picturesRouter = require('./routes/pictures')
 const tattoosRouter = require('./routes/tattoos')
 const tattoosUserRouter = require('./routes/tattoosUser')
+const usersTattoosRouter = require('./routes/usersTattoo');
 
 // Création de l'application Express
 const app = express();
@@ -32,6 +33,7 @@ app.use('/addresses', addressesRouter);
 app.use('/pictures', picturesRouter);
 app.use('/tattoos', tattoosRouter);
 app.use('/tattoos_users', tattoosUserRouter);
+app.use('/users_tattoos', usersTattoosRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
