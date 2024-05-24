@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM user_address');
     if (rows.length === 0) {
-      return res.status(404).json({ error: 'No addresses linked to users.' });
+      return res.status(404).json({ error: 'No users linked to addresses.' });
     }
     res.status(200).json(rows);
   } catch (error) {
@@ -19,13 +19,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET user_addresses by ID of address
-router.get('/:idAddress', async (req, res) => {
+// GET user_addresses by ID of user
+router.get('/:idUser', async (req, res) => {
   try {
-    const addressId = req.params.idAddress;
-    const [rows] = await db.query('SELECT * FROM user_address WHERE id_address = ?', [addressId]);
+    const userId = req.params.idUser;
+    const [rows] = await db.query('SELECT * FROM user_address WHERE id_user = ?', [userId]);
     if (rows.length === 0) {
-      return res.status(404).json({ error: 'No users found for this address.' });
+      return res.status(404).json({ error: 'No addresses found for this user.' });
     }
     res.status(200).json(rows);
   } catch (error) {
@@ -49,7 +49,7 @@ router.post('/', addressUserValidationRules, validateInputs, async (req, res) =>
 });
 
 // PUT update user_address
-router.put('/:idAddress/:idUser', addressUserValidationRules, validateInputs, async (req, res) => {
+router.put('/:idUser/:idAddress', addressUserValidationRules, validateInputs, async (req, res) => {
   try {
     const addressId = req.params.idAddress;
     const userId = req.params.idUser;
@@ -77,7 +77,7 @@ router.put('/:idAddress/:idUser', addressUserValidationRules, validateInputs, as
 });
 
 // DELETE user_address
-router.delete('/:idAddress/:idUser', async (req, res) => {
+router.delete('/:idUser/:idAddress', async (req, res) => {
   try {
     const addressId = req.params.idAddress;
     const userId = req.params.idUser;
