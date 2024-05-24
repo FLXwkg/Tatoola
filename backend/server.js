@@ -12,10 +12,16 @@ const stylesUserRouter = require('./routes/stylesUser');
 const usersStyleRouter = require('./routes/usersStyle');
 
 const picturesRouter = require('./routes/pictures')
+const picturesUserRouter = require('./routes/picturesUser')
+const usersPicturesRouter = require('./routes/usersPicture')
 
 const tattoosRouter = require('./routes/tattoos')
 const tattoosUserRouter = require('./routes/tattoosUser')
 const usersTattoosRouter = require('./routes/usersTattoo');
+
+// const tattoosPictureRouter = require('./routes/tattoosPicture')
+
+
 
 // Création de l'application Express
 const app = express();
@@ -40,6 +46,8 @@ app.use('/addresses_users', addressesUserRouter);
 app.use('/users_addresses', usersAddressesRouter);
 
 app.use('/pictures', picturesRouter);
+app.use('/pictures_users', picturesUserRouter);
+app.use('/users_pictures', usersPicturesRouter);
 
 
 
