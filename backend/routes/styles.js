@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('../db');
 const { validateInputs } = require('../middlewares/validation');
 const { styleValidationRules } = require('../middlewares/styleValidation');
+const { verifyToken } = require('../auth');
 
 const router = express.Router();
 
@@ -32,7 +33,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST new style
-router.post('/', styleValidationRules, validateInputs, async (req, res) => {
+router.post('/', verifyToken, styleValidationRules, validateInputs, async (req, res) => {
   try {
     const { name, description } = req.body;
     const result = await db.query('INSERT INTO style (name, description) VALUES (?, ?)',
@@ -45,7 +46,7 @@ router.post('/', styleValidationRules, validateInputs, async (req, res) => {
 });
 
 // PUT update style
-router.put('/:id', styleValidationRules, validateInputs, async (req, res) => {
+router.put('/:id', verifyToken, styleValidationRules, validateInputs, async (req, res) => {
   try {
     const styleId = req.params.id;
     const { name, description } = req.body;
@@ -61,7 +62,7 @@ router.put('/:id', styleValidationRules, validateInputs, async (req, res) => {
 });
 
 // DELETE style
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
     const styleId = req.params.id;
     await db.query('DELETE FROM style WHERE id = ?', [styleId]);
