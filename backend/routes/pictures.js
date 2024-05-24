@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('../db');
 const { validateInputs } = require('../middlewares/validation');
 const { pictureValidationRules } = require('../middlewares/pictureValidation');
+const { verifyToken } = require('../auth');
 
 const router = express.Router();
 
@@ -32,7 +33,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST new picture
-router.post('/', pictureValidationRules, validateInputs, async (req, res) => {
+router.post('/', verifyToken, pictureValidationRules, validateInputs, async (req, res) => {
   try {
     const { title, description, image_url, id_user } = req.body;
     const result = await db.query('INSERT INTO picture (title, description, image_url, id_user) VALUES (?, ?, ?, ?)',
@@ -45,7 +46,7 @@ router.post('/', pictureValidationRules, validateInputs, async (req, res) => {
 });
 
 // PUT update picture
-router.put('/:id', pictureValidationRules, validateInputs, async (req, res) => {
+router.put('/:id', verifyToken, pictureValidationRules, validateInputs, async (req, res) => {
   try {
     const pictureId = req.params.id;
     const { title, description, image_url, id_user } = req.body;
@@ -61,7 +62,7 @@ router.put('/:id', pictureValidationRules, validateInputs, async (req, res) => {
 });
 
 // DELETE picture
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
     const pictureId = req.params.id;
     await db.query('DELETE FROM picture WHERE id = ?', [pictureId]);

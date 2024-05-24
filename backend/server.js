@@ -5,7 +5,7 @@ const usersRouter = require('./routes/users');
 
 const addressesRouter = require('./routes/addresses');
 const addressesUserRouter = require('./routes/addressesUser');
-const usersAddressesRouter = require('./routes/usersAdress');
+const usersAddressesRouter = require('./routes/usersAddress');
 
 const stylesRouter = require('./routes/styles')
 const stylesUserRouter = require('./routes/stylesUser');

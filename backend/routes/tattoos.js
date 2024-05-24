@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('../db');
 const { validateInputs } = require('../middlewares/validation');
 const { tattooValidationRules } = require('../middlewares/tattooValidation');
+const { verifyToken } = require('../auth');
 
 const router = express.Router();
 
@@ -32,7 +33,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST new tattoo
-router.post('/', tattooValidationRules, validateInputs, async (req, res) => {
+router.post('/', verifyToken, tattooValidationRules, validateInputs, async (req, res) => {
   try {
     const { is_premium, id_user, id_style } = req.body;
     const result = await db.query('INSERT INTO tattoo (is_premium, id_user, id_style) VALUES (?, ?, ?)',
@@ -45,7 +46,7 @@ router.post('/', tattooValidationRules, validateInputs, async (req, res) => {
 });
 
 // PUT update tattoo
-router.put('/:id', tattooValidationRules, validateInputs, async (req, res) => {
+router.put('/:id', verifyToken, tattooValidationRules, validateInputs, async (req, res) => {
   try {
     const tattooId = req.params.id;
     const { is_premium, id_user, id_style } = req.body;
@@ -61,7 +62,7 @@ router.put('/:id', tattooValidationRules, validateInputs, async (req, res) => {
 });
 
 // DELETE tattoo
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
     const tattooId = req.params.id;
     await db.query('DELETE FROM tattoo WHERE id = ?', [tattooId]);

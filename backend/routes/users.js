@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs');
 const router = express.Router();
 
 // GET all users
-router.get('/', verifyToken, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM user');
     res.status(200).json(rows);

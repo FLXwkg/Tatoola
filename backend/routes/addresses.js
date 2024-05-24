@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('../db');
 const { validateInputs } = require('../middlewares/validation');
 const { addressValidationRules } = require('../middlewares/addressValidation');
+const { verifyToken } = require('../auth');
 
 const router = express.Router();
 
@@ -32,7 +33,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST new address
-router.post('/', addressValidationRules, validateInputs, async (req, res) => {
+router.post('/', verifyToken, addressValidationRules, validateInputs, async (req, res) => {
   try {
     const { number, label, city, postcode, latitude, longitude } = req.body;
     const result = await db.query('INSERT INTO address (number, label, city, postcode, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?)',
@@ -45,7 +46,7 @@ router.post('/', addressValidationRules, validateInputs, async (req, res) => {
 });
 
 // PUT update address
-router.put('/:id', addressValidationRules, validateInputs, async (req, res) => {
+router.put('/:id', verifyToken, addressValidationRules, validateInputs, async (req, res) => {
   try {
     const addressId = req.params.id;
     const { number, label, city, postcode, latitude, longitude } = req.body;
@@ -61,7 +62,7 @@ router.put('/:id', addressValidationRules, validateInputs, async (req, res) => {
 });
 
 // DELETE address
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
     const addressId = req.params.id;
     await db.query('DELETE FROM address WHERE id = ?', [addressId]);

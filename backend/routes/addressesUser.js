@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('../db');
 const { validateInputs } = require('../middlewares/validation');
 const { addressUserValidationRules } = require('../middlewares/addressUserValidation');
+const { verifyToken } = require('../auth');
 
 const router = express.Router();
 
@@ -35,7 +36,7 @@ router.get('/:idAddress', async (req, res) => {
 });
 
 // POST new user_address
-router.post('/', addressUserValidationRules, validateInputs, async (req, res) => {
+router.post('/', verifyToken, addressUserValidationRules, validateInputs, async (req, res) => {
   try {
     const { id_user, id_address } = req.body;
     const result = await db.query('INSERT INTO user_address (id_user, id_address) VALUES (?, ?)',
@@ -49,7 +50,7 @@ router.post('/', addressUserValidationRules, validateInputs, async (req, res) =>
 });
 
 // PUT update user_address
-router.put('/:idAddress/:idUser', addressUserValidationRules, validateInputs, async (req, res) => {
+router.put('/:idAddress/:idUser', verifyToken, addressUserValidationRules, validateInputs, async (req, res) => {
   try {
     const addressId = req.params.idAddress;
     const userId = req.params.idUser;
@@ -77,7 +78,7 @@ router.put('/:idAddress/:idUser', addressUserValidationRules, validateInputs, as
 });
 
 // DELETE user_address
-router.delete('/:idAddress/:idUser', async (req, res) => {
+router.delete('/:idAddress/:idUser', verifyToken, async (req, res) => {
   try {
     const addressId = req.params.idAddress;
     const userId = req.params.idUser;

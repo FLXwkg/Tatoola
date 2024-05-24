@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('../db');
 const { validateInputs } = require('../middlewares/validation');
 const { tattooUserValidationRules } = require('../middlewares/tattooUserValidation');
+const { verifyToken } = require('../auth');
 
 const router = express.Router();
 
@@ -35,7 +36,7 @@ router.get('/:idUser', async (req, res) => {
 });
 
 // POST new user_tattoo
-router.post('/', tattooUserValidationRules, validateInputs, async (req, res) => {
+router.post('/', verifyToken, tattooUserValidationRules, validateInputs, async (req, res) => {
   try {
     const { id_user, id_tattoo } = req.body;
     const result = await db.query('INSERT INTO user_tattoo (id_user, id_tattoo) VALUES (?, ?)',
@@ -49,7 +50,7 @@ router.post('/', tattooUserValidationRules, validateInputs, async (req, res) => 
 });
 
 // PUT update user_tattoo
-router.put('/:idUser/:idTattoo', tattooUserValidationRules, validateInputs, async (req, res) => {
+router.put('/:idUser/:idTattoo', verifyToken, tattooUserValidationRules, validateInputs, async (req, res) => {
   try {
     const tattooId = req.params.idTattoo;
     const userId = req.params.idUser;
@@ -78,7 +79,7 @@ router.put('/:idUser/:idTattoo', tattooUserValidationRules, validateInputs, asyn
 });
 
 // DELETE user_tattoo
-router.delete('/:idUser/:idTattoo', async (req, res) => {
+router.delete('/:idUser/:idTattoo', verifyToken, async (req, res) => {
   try {
     const tattooId = req.params.idTattoo;
     const userId = req.params.idUser;
