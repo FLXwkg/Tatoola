@@ -1,6 +1,6 @@
 // src/components/TatooMag.js
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHeader, Image, Link, Button, Divider } from '@nextui-org/react';
+import { Card, CardBody, CardFooter, CardHeader, Image, Link, Button, Divider, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react';
 
 const categories = [
   {
@@ -20,7 +20,7 @@ const categories = [
   {
     id: 3,
     title: 'publié par Tiffany',
-    description: "Les meilleurs pratiques à adopter pour l'été ☀️",
+    description: "Les meilleures pratiques à adopter pour l'été ☀️",
     image: '/public/tatoomag/news3.webp',
     link: '/categorie-3',
   },
@@ -42,7 +42,17 @@ const TatooMag = () => {
           <Card key={category.id} className="shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <CardHeader className="flex justify-between items-center p-4">
               <h3 className="font-semibold text-lg">{category.title}</h3>
-              <Button auto size="sm" className="bg-primary-500 text-white">Nouvelle</Button>
+              <Popover placement="top">
+                <PopoverTrigger>
+                  <Button auto size="sm" className="bg-primary-500 text-white">Nouvelle</Button>
+                </PopoverTrigger>
+                <PopoverContent>
+                  <div className="p-2">
+                    <p className="text-sm font-bold">{category.title}</p>
+                    <p className="text-xs">{category.description}</p>
+                  </div>
+                </PopoverContent>
+              </Popover>
             </CardHeader>
             <Image
               src={category.image}
