@@ -1,33 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
-import TattooInspiration from '../components/tattoo/TattooInspiration';
-import LatestArticles from '../components/LatestArticles';
-import NearbyTattooists from '../components/NearbyTattooists';
 import Footer from '../components/footer/Footer';
+import Map from '../components/map/Map';
+import Proposals from '../components/Proposals';
+import Tattootheque from '../components/tattoo/Tattootheque';
+import TatooMag from '../components/tattoo/TattooMag';
+import FAQ from '../components/FAQ';
+import TattooNearby from '../components/tattoo/TattooNearby';
+
+
+
 
 const HomePage = () => {
   return (
     <div>
-      <SearchBar />
-      <div className="container">
-        <div className="mt-8 mb-8">
-          <h2 className="text-xl font-bold">Trouver votre tatouage</h2>
-          <TattooInspiration />
-          <Link to="/tatouages" className="text-blue-500">Voir tout</Link>
-        </div>
-        <div className="mt-8 mb-8">
-          <h2 className="text-xl font-bold">Les derniers articles du mag</h2>
-          <LatestArticles />
-        </div>
-        <div className="mt-8 mb-8">
-          <h2 className="text-xl font-bold">Les tatoueurs proches de chez vous</h2>
-          <NearbyTattooists />
-        </div>
-      </div>
+      <main className="container mx-auto p-4">
+        <Map />
+        <SearchBar />
+        <TattooNearby />
+        <Proposals />
+        <Tattootheque />
+        <TatooMag />
+        <FAQ />
+      </main>
       <Footer />
     </div>
   );
 };
+
 
 export default HomePage;
