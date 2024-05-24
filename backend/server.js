@@ -19,7 +19,8 @@ const tattoosRouter = require('./routes/tattoos')
 const tattoosUserRouter = require('./routes/tattoosUser')
 const usersTattoosRouter = require('./routes/usersTattoo');
 
-// const tattoosPictureRouter = require('./routes/tattoosPicture')
+const tattoosPictureRouter = require('./routes/tattoosPicture')
+const picturesTattooRouter = require('./routes/picturesTattoo')
 
 
 
@@ -49,11 +50,12 @@ app.use('/pictures', picturesRouter);
 app.use('/pictures_users', picturesUserRouter);
 app.use('/users_pictures', usersPicturesRouter);
 
-
-
 app.use('/tattoos', tattoosRouter);
 app.use('/tattoos_users', tattoosUserRouter);
 app.use('/users_tattoos', usersTattoosRouter);
+
+app.use('/tattoos_pictures', tattoosPictureRouter)
+app.use('/pictures_tattoos', picturesTattooRouter)
 
 // Error handling middleware
 app.use((err, req, res, next) => {
