@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 
-
 const secretKey = 'f7d182d7cdb680f08b35e3571056e25f838af9dc90aed27ccbc193804cc576212cd29474c760d5edc75602e64a12e7f0528490063cecaf2e1cdf3e5c0b4b3059';
 
 // Function to generate a token
