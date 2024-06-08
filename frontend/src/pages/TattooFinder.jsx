@@ -1,7 +1,7 @@
 // src/pages/Tattoofinder.jsx
 import React, { useState } from 'react';
 import { Input, Button, Card, CardBody, CardHeader, Image, Divider, Link, Badge, CardFooter } from '@nextui-org/react';
-import Footer from '../components/footer/Footer';
+
 
 
 const Tattoofinder = () => {
@@ -90,7 +90,6 @@ const Tattoofinder = () => {
         </div>
       </main>
 
-    <Footer />
     </div>
   );
 };

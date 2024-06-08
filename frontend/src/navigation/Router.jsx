@@ -11,6 +11,8 @@ import Tattoofinder from '../pages/TattooFinder' // Import de tatouage-finder
 import TattooView from '../pages/TattooView'// Import de tatouage-view 
 import TattooTalk from '../pages/TattooTalk'
 import TattooMag from '../pages/TattooMag'
+import Map from '../components/map/Map' // Import de la carte
+import StylePage from '../pages/StylePage'
 // Importez ici d'autres pages si nécessaire
 
 const Router = () => {
@@ -22,6 +24,8 @@ const Router = () => {
         <Route path='/tattoo-view' element={<TattooView />} />
         <Route path='/tattoo-mag' element={<TattooMag/>} />
         <Route path='/tattoo-talk' element={<TattooTalk />} />
+        <Route path='/map' element={<Map />} /> {/* Ajout de la route pour la carte */}
+        <Route path='/style/:style' element={<StylePage />} /> {/* Ajout de la route pour la page de style  */}
       </Routes>
     </BrowserRouter>
   )

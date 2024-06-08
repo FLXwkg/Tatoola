@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardBody, CardFooter, CardHeader, Avatar, Button, Link, Image, } from '@nextui-org/react';
-import Footer from '../components/footer/Footer';
 
 const posts = [
   {
@@ -77,7 +76,6 @@ const TattooTalk = () => {
           </Card>
         ))}
       </div>
-      <Footer />
     </div>
     
   );

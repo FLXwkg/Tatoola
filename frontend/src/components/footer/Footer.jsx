@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@nextui-org/react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
@@ -21,19 +21,19 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Liens rapides</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-gray-300">Accueil</Link>
+                <Link href="/" className="hover:text-gray-300">Accueil</Link>
               </li>
               <li>
-                <Link to="/tattoo-finder" className="hover:text-gray-300">Trouver un tatoueur</Link>
+                <Link href="/tattoo-finder" className="hover:text-gray-300">Trouver un tatoueur</Link>
               </li>
               <li>
-                <Link to="/tattoo-mag" className="hover:text-gray-300">TattooMag</Link>
+                <Link href="/tattoo-mag" className="hover:text-gray-300">TattooMag</Link>
               </li>
               <li>
-                <Link to="/tattoo-view" className="hover:text-gray-300">TattooView</Link>
+                <Link href="/tattoo-view" className="hover:text-gray-300">TattooView</Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-gray-300">Contact</Link>
+                <Link href="/contact" className="hover:text-gray-300">Contact</Link>
               </li>
             </ul>
           </div>
@@ -42,13 +42,13 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-bold mb-4">Suivez-nous</h3>
             <div className="flex space-x-4">
-              <Link to="#" className="text-white hover:text-gray-300">
+              <Link href="#" className="text-white hover:text-gray-300">
                 <FaFacebook size="24" />
               </Link>
-              <Link to="#" className="text-white hover:text-gray-300">
+              <Link href="#" className="text-white hover:text-gray-300">
                 <FaTwitter size="24" />
               </Link>
-              <Link to="#" className="text-white hover:text-gray-300">
+              <Link href="#" className="text-white hover:text-gray-300">
                 <FaInstagram size="24" />
               </Link>
             </div>

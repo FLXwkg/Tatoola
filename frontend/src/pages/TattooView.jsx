@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardFooter, CardHeader, Image, Button, Link, Divider } from '@nextui-org/react';
-import Footer from '../components/footer/Footer';
+
 
 const TattooView = () => {
   return (
@@ -92,7 +92,6 @@ const TattooView = () => {
           </Button>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

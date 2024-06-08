@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardFooter, CardHeader, Image, Link, Button, Divider, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react';
-import Footer from '../components/footer/Footer';
+
 
 const articles = [
   {
@@ -78,7 +78,6 @@ const TattooMag = () => {
           Voir plus d'articles
         </Button>
       </div>
-      <Footer />
     </div>
   );
 };
