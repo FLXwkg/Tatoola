@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-indigo-700 text-white py-10">
+    <footer className="bg-zinc-900 text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Section Contact */}
@@ -21,19 +21,19 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Liens rapides</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-gray-300">Accueil</Link>
+                <Link href="/" className="hover:text-gray-300 text-zinc-50">Accueil</Link>
               </li>
               <li>
-                <Link href="/tattoo-finder" className="hover:text-gray-300">Trouver un tatoueur</Link>
+                <Link href="/tattoo-finder" className="hover:text-gray-300 text-zinc-50">Trouver un tatoueur</Link>
               </li>
               <li>
-                <Link href="/tattoo-mag" className="hover:text-gray-300">TattooMag</Link>
+                <Link href="/tattoo-mag" className="hover:text-gray-300 text-zinc-50">TattooMag</Link>
               </li>
               <li>
-                <Link href="/tattoo-view" className="hover:text-gray-300">TattooView</Link>
+                <Link href="/tattoo-view" className="hover:text-gray-300 text-zinc-50">TattooView</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-gray-300">Contact</Link>
+                <Link href="/contact" className="hover:text-gray-300 text-zinc-50">Contact</Link>
               </li>
             </ul>
           </div>
@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-indigo-500 pt-4 text-center">
+        <div className="mt-8 border-t border-zinc-50 pt-4 text-center">
           <p>&copy; 2024 Tattoola. Tous droits réservés.</p>
         </div>
       </div>

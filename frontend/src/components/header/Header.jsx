@@ -13,10 +13,10 @@ import {
   DropdownTrigger,
   Avatar,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Image
 } from "@nextui-org/react";
 import { Logo } from "./Logo"
-
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,44 +24,48 @@ function Header() {
   const user = { email: "user@example.com" }; // Remplace par l'utilisateur réel
 
   return (
-    <Navbar isBordered variant="sticky" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      isBordered
+      variant="sticky"
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-zinc-900 text-zinc-50"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="sm:hidden text-zinc-50"
         />
         <NavbarBrand>
-          <Link href="/" color="inherit">
-          <Logo />
-          
-          <p className="font-bold text-xl text-inherit">Tattoola</p>
+          <Link href="/" className="text-inherit">
+            <Logo />
+            <p className="font-bold text-xl text-inherit ml-2">Tattoola</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link href="/tattoo-finder" color="inherit">
-            TatooFinder
+          <Link href="/tattoo-finder" className="text-zinc-50">
+            TattooFinder
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/tattoo-view" color="inherit">
-            TatooView
+          <Link href="/tattoo-view" className="text-zinc-50">
+            TattooView
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/tattoo-mag" color="inherit">
-            TatooMag
+          <Link href="/tattoo-mag" className="text-zinc-50">
+            TattooMag
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/tattoo-talk" color="inherit">
-            TatooTalk
+          <Link href="/tattoo-talk" className="text-zinc-50">
+            TattooTalk
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/" color="inherit">
+          <Link href="/" className="text-zinc-50">
             Vous êtes tatoueurs ?
           </Link>
         </NavbarItem>
@@ -97,11 +101,11 @@ function Header() {
         ) : (
           <>
             <NavbarItem className="hidden lg:flex">
-              <Link href="/register">Sign up</Link>
+              <Link href="/register" className="text-zinc-50">Sign up</Link>
             </NavbarItem>
             <NavbarItem>
-              <Button as={Link} color="primary" href="/authentication" variant="flat">
-                Login
+              <Button as={Link} color="default" href="/authentication" variant="flat">
+                Connexion
               </Button>
             </NavbarItem>
           </>
@@ -110,27 +114,27 @@ function Header() {
 
       <NavbarMenu>
         <NavbarMenuItem>
-          <Link href="/tattoo-finder">
-            TatooFinder
+          <Link href="/tattoo-finder" className="text-zinc-50">
+            TattooFinder
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/tattoo-view">
-            TatooView
+          <Link href="/tattoo-view" className="text-zinc-50">
+            TattooView
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/tattoo-mag">
-            TatooMag
+          <Link href="/tattoo-mag" className="text-zinc-50">
+            TattooMag
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/tattoo-talk">
-            TatooTalk
+          <Link href="/tattoo-talk" className="text-zinc-50">
+            TattooTalk
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="#">
+          <Link href="/" className="text-zinc-50">
             Vous êtes tatoueurs ?
           </Link>
         </NavbarMenuItem>

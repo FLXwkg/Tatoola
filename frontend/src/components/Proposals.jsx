@@ -57,7 +57,7 @@ const Proposals = () => {
               <p className="text-gray-600 mt-2">{proposal.description}</p>
             </CardBody>
             <CardFooter className="flex justify-center p-4">
-              <Link to={proposal.link} className="text-primary-500 hover:text-primary-700">
+              <Link to={proposal.link} className="text-zinc-900 hover:text-zinc-500">
                 En savoir plus
               </Link>
             </CardFooter>

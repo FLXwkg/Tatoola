@@ -8,7 +8,7 @@ const containerStyle = {
   height: '400px',
   margin: 'auto',
   borderRadius: '8px',
-  border: '4px solid #ccc'
+  border: '4px solid black'
 };
 
 const center = {
@@ -249,7 +249,7 @@ const Map = () => {
           padding: '10px',
           margin: '10px auto auto', // Center horizontally
           display: 'flex', // Make input block-level element
-          border: '1px solid #ccc', // Border style
+          border: '1px solid black', // Border style
           borderRadius: '8px', // Rounded corners
         }}
       />
