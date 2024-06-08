@@ -17,6 +17,7 @@ import {
 } from "@nextui-org/react";
 import { Logo } from "./Logo"
 
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isLoggedIn = false; // Remplace ceci par la logique d'authentification réelle
@@ -30,34 +31,37 @@ function Header() {
           className="sm:hidden"
         />
         <NavbarBrand>
+          <Link href="/" color="inherit">
           <Logo />
+          
           <p className="font-bold text-xl text-inherit">Tattoola</p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link href="#" color="inherit">
+          <Link href="/tattoo-finder" color="inherit">
             TatooFinder
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="inherit">
+          <Link href="/tattoo-view" color="inherit">
             TatooView
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="inherit">
+          <Link href="/tattoo-mag" color="inherit">
             TatooMag
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="inherit">
+          <Link href="/tattoo-talk" color="inherit">
             TatooTalk
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="inherit">
+          <Link href="/" color="inherit">
             Vous êtes tatoueurs ?
           </Link>
         </NavbarItem>
@@ -106,22 +110,22 @@ function Header() {
 
       <NavbarMenu>
         <NavbarMenuItem>
-          <Link href="#">
+          <Link href="/tattoo-finder">
             TatooFinder
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="#">
+          <Link href="/tattoo-view">
             TatooView
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="#">
+          <Link href="/tattoo-mag">
             TatooMag
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="#">
+          <Link href="/tattoo-talk">
             TatooTalk
           </Link>
         </NavbarMenuItem>
