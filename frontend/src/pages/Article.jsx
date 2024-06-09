@@ -10,7 +10,7 @@ const article = {
     in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
     sunt in culpa qui officia deserunt mollit anim id est laborum.
   `,
-  image: '/public/tatoomag/news1.webp',
+  image: '/tatoomag/news1.webp',
   categories: ['Tendances', '2024'],
   relatedArticles: [
     { id: 2, title: 'Tatouages et significations', link: '/tattoomag/article-2', categories: ['Symboles', 'Significations'] },

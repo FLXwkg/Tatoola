@@ -14,7 +14,7 @@ const posts = [
     author: 'Alexis Remy',
     time: '1h',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
-    image: '/public/tatoomag/post.webp',
+    image: '/tatoomag/post.webp',
     likes: 50,
     shares: "Partager",
   },
@@ -23,7 +23,7 @@ const posts = [
     author: 'Chloé Dubois',
     time: '2h',
     content: 'Quisque velit nisi, pretium ut lacinia in, elementum id enim...',
-    image: '/public/tatoomag/post1.webp',
+    image: '/tatoomag/post1.webp',
     likes: 110,
     shares:"Partager",
   },
@@ -57,7 +57,7 @@ const TattooTalk = () => {
   return (
     <div>
       <header className="relative w-full h-64 overflow-hidden">
-  <img src="/public/headers/tatootalk1.png" alt="Header Background" className="absolute w-full h-full object-cover top-0 left-0" />
+  <img src="/headers/tatootalk1.png" alt="Header Background" className="absolute w-full h-full object-cover top-0 left-0" />
   <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
     <h2 className="text-3xl font-bold text-white mb-4">TattooTalk</h2>
     <h1 className="text-2xl font-bold text-white text-center">Echanger avec la communauté</h1>

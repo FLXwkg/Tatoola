@@ -14,31 +14,31 @@ const shops = [
   {
     id: 1,
     name: 'Tattoo Shop 1',
-    image: '../../../public/salons/salon01.webp',
+    image: '../../../salons/salon01.webp',
     description: 'Description du Tattoo Shop 1',
   },
   {
     id: 2,
     name: 'Tattoo Shop 2',
-    image: '../../../public/salons/salon02.webp',
+    image: '../../../salons/salon02.webp',
     description: 'Description du Tattoo Shop 2',
   },
   {
     id: 3,
     name: 'Tattoo Shop 3',
-    image: '../../../public/salons/salon03.webp',
+    image: '../../../salons/salon03.webp',
     description: 'Description du Tattoo Shop 3',
   },
   {
     id: 4,
     name: 'Tattoo Shop 4',
-    image: '../../../public/salons/salon04.webp',
+    image: '../../../salons/salon04.webp',
     description: 'Description du Tattoo Shop 4',
   },
   {
     id: 5,
     name: 'Tattoo Shop 5',
-    image: '../../../public/salons/salon05.webp',
+    image: '../../../salons/salon05.webp',
     description: 'Description du Tattoo Shop 5',
   },
 ];

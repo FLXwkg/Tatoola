@@ -27,7 +27,7 @@ const initialLocations = [
     image: 'url-to-image-inked-dreams',
     styles: ['Marin', 'Blackwork'],
     address: '12 Rue du Calvaire, 44000 Nantes',
-    images: ['/public/tatoos/marin2.webp', '/public/tatoos/nb1.webp', '/public/tatoos/nb.webp', '/public/tatoos/marin.webp']
+    images: ['/tatoos/marin2.webp', '/tatoos/nb1.webp', '/tatoos/nb.webp', '/tatoos/marin.webp']
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const initialLocations = [
     image: 'url-to-image-artistic-skin',
     styles: ['Japonais', 'Minimaliste'],
     address: '34 Boulevard Gabriel Guist\'hiau, 44000 Nantes',
-    images: ['/public/tatoos/mini.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap1.webp', '/public/tatoos/mini2.webp']
+    images: ['/tatoos/mini.webp', '/tatoos/jap.webp', '/tatoos/jap1.webp', '/tatoos/mini2.webp']
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const initialLocations = [
     image: 'url-to-image-paris-ink',
     styles: ['Japonais', 'Minimaliste'],
     address: '15 Rue de Rivoli, 75001 Paris',
-    images: ['/public/tatoos/jap2.webp', '/public/tatoos/jap3.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini2.webp']
+    images: ['/tatoos/jap2.webp', '/tatoos/jap3.webp', '/tatoos/mini3.webp', '/tatoos/mini2.webp']
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ const initialLocations = [
     image: 'url-to-image-tattoo-art-paris',
     styles: ['Marin', 'Blackwork'],
     address: '27 Avenue de l\'Opéra, 75001 Paris',
-    images: ['/public/tatoos/marin2.webp', '/public/tatoos/nb1.webp', '/public/tatoos/nb.webp', '/public/tatoos/marin.webp']
+    images: ['/tatoos/marin2.webp', '/tatoos/nb1.webp', '/tatoos/nb.webp', '/tatoos/marin.webp']
   },
   {
     id: 5,
@@ -67,7 +67,7 @@ const initialLocations = [
     image: 'url-to-image-lyon-ink-masters',
     styles: ['Pop Culture', 'Polynésien'],
     address: '45 Quai Saint-Antoine, 69002 Lyon',
-    images: ['/public/tatoos/pop1.webp', '/public/tatoos/pop.webp', '/public/tatoos/tribal.webp', '/public/tatoos/tribal1.webp']
+    images: ['/tatoos/pop1.webp', '/tatoos/pop.webp', '/tatoos/tribal.webp', '/tatoos/tribal1.webp']
   },
   
   // Nouveaux tatoueurs
@@ -80,7 +80,7 @@ const initialLocations = [
     image: 'url-to-image-nantes-ink-spot',
     styles: ['Japon', 'Linework'],
     address: '78 Boulevard des Belges, 44300 Nantes',
-    images: ['/public/tatoos/jap3.webp', '/public/tatoos/jap2.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini4.webp']
+    images: ['/tatoos/jap3.webp', '/tatoos/jap2.webp', '/tatoos/mini3.webp', '/tatoos/mini4.webp']
   },
   {
     id: 7,
@@ -90,7 +90,7 @@ const initialLocations = [
     image: 'url-to-image-creative-tattoos',
     styles: ['Pop', 'Tribal'],
     address: '5 Rue de Strasbourg, 44000 Nantes',
-    images: ['/public/tatoos/pop2.webp', '/public/tatoos/tribal1.webp', '/public/tatoos/tribal.webp', '/public/tatoos/pop3.webp']
+    images: ['/tatoos/pop2.webp', '/tatoos/tribal1.webp', '/tatoos/tribal.webp', '/tatoos/pop3.webp']
   },
   
   // Paris
@@ -102,7 +102,7 @@ const initialLocations = [
     image: 'url-to-image-eiffel-ink',
     styles: ['Japon', 'Linework'],
     address: '22 Rue Cler, 75007 Paris',
-    images: ['/public/tatoos/jap3.webp', '/public/tatoos/jap2.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini4.webp']
+    images: ['/tatoos/jap3.webp', '/tatoos/jap2.webp', '/tatoos/mini3.webp', '/tatoos/mini4.webp']
   },
   {
     id: 9,
@@ -112,7 +112,7 @@ const initialLocations = [
     image: 'url-to-image-montmartre-tattoos',
     styles: ['Pop', 'Tribal'],
     address: '10 Rue Tholozé, 75018 Paris',
-    images: ['/public/tatoos/pop2.webp', '/public/tatoos/tribal1.webp', '/public/tatoos/tribal.webp', '/public/tatoos/pop3.webp']
+    images: ['/tatoos/pop2.webp', '/tatoos/tribal1.webp', '/tatoos/tribal.webp', '/tatoos/pop3.webp']
   },
   
   // Lyon
@@ -124,7 +124,7 @@ const initialLocations = [
     image: 'url-to-image-old-town-ink',
     styles: ['Black and Grey', 'Traditional'],
     address: '16 Rue Saint-Jean, 69005 Lyon',
-    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
+    images: ['/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp']
   },
   {
     id: 11,
@@ -134,7 +134,7 @@ const initialLocations = [
     image: 'url-to-image-modern-tattoo-lyon',
     styles: ['Japon', 'Linework'],
     address: '28 Rue de Marseille, 69007 Lyon',
-    images: ['/public/tatoos/jap3.webp', '/public/tatoos/jap2.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini4.webp']
+    images: ['/tatoos/jap3.webp', '/tatoos/jap2.webp', '/tatoos/mini3.webp', '/tatoos/mini4.webp']
   },
   
   // Marseille
@@ -146,7 +146,7 @@ const initialLocations = [
     image: 'url-to-image-marseille-inked',
     styles: ['Realism', 'Tribal'],
     address: '21 Rue de la République, 13002 Marseille',
-    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
+    images: ['/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp']
   },
   
   // Bordeaux
@@ -158,7 +158,7 @@ const initialLocations = [
     image: 'url-to-image-bordeaux-body-art',
     styles: ['Geometric', 'Blackwork'],
     address: '12 Rue Sainte-Catherine, 33000 Bordeaux',
-    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
+    images: ['/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp']
   },
   
   // Lille
@@ -170,7 +170,7 @@ const initialLocations = [
     image: 'url-to-image-lille-tattoo-studio',
     styles: ['Watercolor', 'Portrait'],
     address: '8 Rue de Béthune, 59800 Lille',
-    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
+    images: ['/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp', '/tatoos/jap.webp']
   }
 ];
 

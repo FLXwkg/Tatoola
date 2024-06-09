@@ -10,19 +10,19 @@ const carouselItems = [
   {
     id: 1,
     title: 'Trouvé grâce à notre TattooFinder',
-    image: '/public/tatoos/tatoo9.webp',
+    image: '/tatoos/tatoo9.webp',
     link: '/tattoo-finder',
   },
   {
     id: 2,
     title: 'Tatouages de mangas !',
-    image: '/public/tatoos/jap.webp',
+    image: '/tatoos/jap.webp',
     link: '/tattoo-finder',
   },
   {
     id: 3,
     title: 'Inspiration pour vos prochains tattoos !',
-    image: '/public/tatoos/jap3.webp',
+    image: '/tatoos/jap3.webp',
     link: '/tattoo-finder',
   },
   // Ajoutez plus d'éléments ici
