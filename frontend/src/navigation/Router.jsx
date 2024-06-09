@@ -16,6 +16,9 @@ import StylePage from '../pages/StylePage'
 import PrivateRoutes from './PrivateRouteMiddleware'
 import Dashboard from '../pages/protected/Dashboard'
 import Auth from '../pages/Auth'
+import Register from '../pages/Register'
+import BecomeArtist from '../pages/BecomeArtist'
+import ArtistForms from '../pages/ArtistForms'
 // Importez ici d'autres pages si nécessaire
 
 const Router = () => {
@@ -30,6 +33,9 @@ const Router = () => {
         <Route path='/map' element={<Map />} /> {/* Ajout de la route pour la carte */}
         <Route path='/style/:style' element={<StylePage />} /> {/* Ajout de la route pour la page de style  */}
         <Route path='authentication' element={<Auth />} />
+        <Route path='register' element={<Register />} />
+        <Route path='become_artist' element={<BecomeArtist />} />
+        <Route path='artist_forms' element={<ArtistForms />} />
         <Route path='dashboard' element={<PrivateRoutes />}>
           <Route index element={<Dashboard />} />
         </Route>

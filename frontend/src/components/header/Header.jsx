@@ -17,11 +17,11 @@ import {
   Image
 } from "@nextui-org/react";
 import { Logo } from "./Logo"
+import { useAuth } from "../../contexts/authContext";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isLoggedIn = false; // Remplace ceci par la logique d'authentification réelle
-  const user = { email: "user@example.com" }; // Remplace par l'utilisateur réel
+  const { logout, state: { user, isLoggedIn } } = useAuth()
 
   return (
     <Navbar
@@ -65,8 +65,8 @@ function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/" className="text-zinc-50">
-            Vous êtes tatoueurs ?
+          <Link href="/become_artist" className="text-zinc-50">
+            Vous êtes tatoueur ?
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -93,7 +93,7 @@ function Header() {
               <DropdownItem key="dashboard" as="a" href="/dashboard" color="success">
                 Voir mon dashboard
               </DropdownItem>
-              <DropdownItem key="logout" color="danger" onPress={() => console.log("Logout")}>
+              <DropdownItem key="logout" color="danger" onPress={() => logout()}>
                 Déconnexion
               </DropdownItem>
             </DropdownMenu>
@@ -101,10 +101,10 @@ function Header() {
         ) : (
           <>
             <NavbarItem className="hidden lg:flex">
-              <Link href="/register" className="text-zinc-50">Sign up</Link>
+              <Link href="/register" className="text-zinc-50">S'inscrire</Link>
             </NavbarItem>
             <NavbarItem>
-              <Button as={Link} color="default" href="/authentication" variant="flat">
+              <Button as={Link} className="bg-zinc-50" href="/authentication" variant="flat">
                 Connexion
               </Button>
             </NavbarItem>

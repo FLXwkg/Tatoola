@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from 'react'
-// import { loginApi, registerApi } from '../services/api'
-// import { toast } from 'react-toastify'
+import { loginApi, registerApi } from '../services/api'
 
 const AuthContext = createContext()
 
@@ -58,6 +57,7 @@ const authFactory = (dispatch) => ({
     dispatch({ type: actionTypes.LOADING })
     try {
       const result = await loginApi(credentials)
+      console.log('result :>> ', result);
       dispatch({
         type: actionTypes.LOGIN,
         data: {
@@ -66,7 +66,6 @@ const authFactory = (dispatch) => ({
         }
       })
     } catch (error) {
-      toast.error('Identifiant ou Mot de passe incorrect')
       dispatch({
         type: actionTypes.ERROR,
         data: { error: 'Identifiant ou Mot de passe incorrect' }
@@ -89,7 +88,6 @@ const authFactory = (dispatch) => ({
         }
       })
     } catch (error) {
-      toast.error('Erreur lors de l\'inscription. Veuillez réessayer.')
       dispatch({
         type: actionTypes.ERROR,
         data: { error: 'Erreur lors de l\'inscription. Veuillez réessayer.' }
@@ -99,13 +97,13 @@ const authFactory = (dispatch) => ({
 })
 
 const AuthProvider = ({ children }) => {
-  const savedState = window.localStorage.getItem('AUTH')
+  const savedState = window.localStorage.getItem('TatoolaAuth')
   const _initialState = savedState ? JSON.parse(savedState) : initialState
 
   const [state, dispatch] = useReducer(authReducer, _initialState)
 
   useEffect(() => {
-    window.localStorage.setItem('AUTH', JSON.stringify(state))
+    window.localStorage.setItem('TatoolaAuth', JSON.stringify(state))
   }, [state])
 
   return (
