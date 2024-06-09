@@ -30,7 +30,7 @@ function BecomeArtist() {
         <div className="w-1/5 p-3">
           <Image
           className="rounded-full p-3"
-          src="/public/features/finder.webp"
+          src="/features/finder.webp"
            />
           <p>
             Augmentez votre visibilité et atteignez une large audience de passionnés de tatouage à la recherche d’artistes talentueux.
@@ -39,7 +39,7 @@ function BecomeArtist() {
         <div className="w-1/5 p-3">
           <Image
           className="rounded-full p-3"
-          src="/public/features/talk.webp"
+          src="/features/talk.webp"
            />
           <p>
             Rejoignez une communauté de professionnels et bénéficiez de recommandations et d’avis positifs pour renforcer votre crédibilité.
@@ -48,7 +48,7 @@ function BecomeArtist() {
         <div className="w-1/5 p-3">
           <Image
           className="rounded-full p-3"
-          src="/public/features/view.webp"
+          src="/features/view.webp"
            />
           <p>
             Présentez votre portfolio de créations uniques et montrez vos compétences artistiques à travers des galeries photo.
@@ -57,7 +57,7 @@ function BecomeArtist() {
         <div className="w-1/5 p-3">
           <Image
           className="rounded-full p-3"
-          src="/public/features/mag.webp"
+          src="/features/mag.webp"
            />
           <p>
             Accédez à des ressources exclusives telles que des guides, tutoriels et articles sur les dernières tendances et techniques de tatouage.
@@ -66,7 +66,7 @@ function BecomeArtist() {
         <div className="w-1/5 p-3">
           <Image
           className="rounded-full p-3"
-          src="/public/tatoos/tatoo6.webp"
+          src="/tatoos/tatoo6.webp"
            />
           <p>
             Gérez facilement vos rendez-vous grâce à notre système de réservation en ligne et simplifiez votre emploi du temps.
@@ -75,7 +75,7 @@ function BecomeArtist() {
       </div>
       <div className="flex flex-row py-5 px-8 gap-4 items-center">
         <div className="w-1/2">
-          <Image src="/public/tatoomag/news1.webp" />
+          <Image src="/tatoomag/news1.webp" />
         </div>
         <div className="flex flex-col w-1/2 text-start ps-3">
         <h4 className="text-2xl font-bold pb-6">Augmentez vos revenus</h4>
@@ -98,12 +98,12 @@ function BecomeArtist() {
         </p>
         </div>
         <div className="w-1/2">
-          <Image src="/public/tatoomag/news4.webp" />
+          <Image src="/tatoomag/news4.webp" />
         </div>
         
       </div>
       <Image
-        src="/public/tatoomag/news3.webp" 
+        src="/tatoomag/news3.webp" 
         className="px-40 py-16"
         />
        <h2 className='text-2xl font-bold pt-5'>Inscrivez vous en moins de 5 minutes !</h2>

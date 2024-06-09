@@ -70,7 +70,7 @@ const TatooMag = () => {
   return (
     <div>
       <header className="relative w-full h-64 overflow-hidden">
-        <img src="/public/headers/tatootalk1.png" alt="Header Background" className="absolute w-full h-full object-cover top-0 left-0" />
+        <img src="/headers/tatootalk1.png" alt="Header Background" className="absolute w-full h-full object-cover top-0 left-0" />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
           <h2 className="text-3xl font-bold text-white mb-4">TatooMag</h2>
           <p className="text-white mb-4">Découvrez nos articles du moment</p>

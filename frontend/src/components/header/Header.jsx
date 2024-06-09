@@ -37,7 +37,7 @@ function Header() {
         <NavbarBrand>
           <Link href="/" className="text-inherit">
           <Image
-              src="/public/logos/logo.png"
+              src="/logos/logo.png"
               alt="Tattoola Logo"
               className="h-10 w-auto ml-[-5px]"
             />
