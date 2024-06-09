@@ -39,7 +39,7 @@ function Header() {
           <Image
               src="/logos/logo.png"
               alt="Tattoola Logo"
-              className="h-10 w-auto ml-[-5px]"
+              className="h-7 w-auto ml-[-5px]"
             />
           </Link>
         </NavbarBrand>
