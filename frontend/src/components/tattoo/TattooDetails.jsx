@@ -1,33 +1,58 @@
-// src/components/TattooDetails.js
 import React from 'react';
+import { Card, CardBody, CardFooter, CardHeader, Image, Link, Button, Divider } from '@nextui-org/react';
+import { useNavigate } from 'react-router-dom';
 
 const TattooDetails = ({ artist }) => {
+  const navigate = useNavigate();
+
+  const handleStyleClick = (style) => {
+    navigate(`/style/${style}`);
+  };
+
   return (
-    <div className="bg-white p-4 shadow-lg mt-4">
-      <h2 className="text-2xl font-bold">{artist.name}</h2>
-      <div className="my-4">
-        <h3 className="text-xl font-bold mb-2">Styles disponibles :</h3>
-        <div className="flex space-x-4">
-          <button className="bg-gray-300 p-2">Style 1</button>
-          <button className="bg-gray-300 p-2">Style 2</button>
-          <button className="bg-gray-300 p-2">Style 3</button>
-          <button className="bg-gray-300 p-2">Style 4</button>
+    <Card className="bg-zinc-900 text-zinc-50 shadow-lg hover:shadow-2xl transition-shadow duration-300 my-4 mx-auto max-w-[450px]">
+      <CardHeader className="flex justify-center items-center p-3">
+        <h2 className="text-xl font-bold text-center">{artist.name}</h2>
+      </CardHeader>
+      <CardBody className="p-3">
+        <div className="my-3">
+          <h3 className="text-lg font-bold mb-2">Styles disponibles :</h3>
+          <div className="flex flex-wrap gap-2">
+            {artist.styles.map((style) => (
+              <Button
+                key={style}
+                auto
+                size="sm"
+                variant="light"
+                className="text-zinc-900 bg-zinc-50"
+                onClick={() => handleStyleClick(style)}
+              >
+                {style}
+              </Button>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="my-4">
-        <h3 className="text-xl font-bold mb-2">Galerie :</h3>
-        <div className="grid grid-cols-4 gap-4">
-          <div className="bg-gray-200 h-32 flex items-center justify-center">Image 1</div>
-          <div className="bg-gray-200 h-32 flex items-center justify-center">Image 2</div>
-          <div className="bg-gray-200 h-32 flex items-center justify-center">Image 3</div>
-          <div className="bg-gray-200 h-32 flex items-center justify-center">Image 4</div>
+        <Divider />
+        <div className="my-3">
+          <h3 className="text-lg font-bold mb-2">Galerie :</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            {artist.images.map((image, index) => (
+              <Image
+                key={index}
+                src={image}
+                alt={`Tattoo ${index + 1}`}
+                className="object-cover h-24 w-full rounded-md"
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="flex space-x-4">
-        <button className="bg-blue-500 text-white px-4 py-2">Contacter</button>
-        <button className="bg-green-500 text-white px-4 py-2">Voir son profil</button>
-      </div>
-    </div>
+      </CardBody>
+      <Divider />
+      <CardFooter className="p-3 flex justify-center space-x-4">
+        <Button className="bg-zinc-50 text-zinc-900 px-4 py-2">Contacter</Button>
+        <Button className="bg-zinc-50 text-zinc-900 px-4 py-2">Voir son profil</Button>
+      </CardFooter>
+    </Card>
   );
 };
 

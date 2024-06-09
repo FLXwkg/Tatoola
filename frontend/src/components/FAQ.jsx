@@ -42,8 +42,8 @@ const faqItems = [
 
 const FAQ = () => {
   return (
-    <div className="my-8">
-      <h2 className="text-2xl font-bold mb-8 text-center">FAQ</h2>
+    <div className="my-8 bg-cover " style={{ backgroundImage: `url('/public/backgrounds/Calque_1.png')` }}>
+      <h2 className="text-2xl font-bold mb-8 text-center text-zinc-50 bg-zinc-800">FAQ</h2>
       <div className="max-w-2xl mx-auto">
         <Accordion variant="shadow">
           {faqItems.map((item) => (
@@ -51,12 +51,12 @@ const FAQ = () => {
               key={item.id}
               aria-label={`FAQ ${item.id}`}
               title={
-                <div className="bg-indigo-500 text-white text-lg p-4 rounded-t-md">
+                <div className="bg-zinc-50 text-zinc-900 text-lg p-4 rounded-t-md">
                   {item.question}
                 </div>
               }
             >
-              <div className="bg-blue-100 text-gray-800 p-4 rounded-b-md">
+              <div className="bg-zinc-500 text-zinc-100 p-4 rounded-b-md">
                 {item.answer}
               </div>
             </AccordionItem>

@@ -44,7 +44,7 @@ const TatooMag = () => {
               <h3 className="font-semibold text-lg">{category.title}</h3>
               <Popover placement="top">
                 <PopoverTrigger>
-                  <Button auto size="sm" className="bg-primary-500 text-white">Nouvelle</Button>
+                  <Button auto size="sm" className="bg-zinc-900 text-white">Nouvelle</Button>
                 </PopoverTrigger>
                 <PopoverContent>
                   <div className="p-2">
@@ -66,7 +66,7 @@ const TatooMag = () => {
             </CardBody>
             <Divider />
             <CardFooter className="p-4 flex justify-between items-center">
-              <Link href={category.link} className="text-primary-500 hover:text-primary-700">
+              <Link href={category.link} className="text-zinc-900 hover:text-zinc-700">
                 En savoir plus
               </Link>
             </CardFooter>
