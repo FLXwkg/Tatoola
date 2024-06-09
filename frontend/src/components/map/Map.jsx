@@ -25,9 +25,9 @@ const initialLocations = [
     lat: 47.2186,
     lng: -1.5563,
     image: 'url-to-image-inked-dreams',
-    styles: ['Realism', 'Blackwork'],
+    styles: ['Marin', 'Blackwork'],
     address: '12 Rue du Calvaire, 44000 Nantes',
-    images: ['url-to-tattoo-realism1', 'url-to-tattoo-realism2', 'url-to-tattoo-blackwork1', 'url-to-tattoo-blackwork2']
+    images: ['/public/tatoos/marin2.webp', '/public/tatoos/nb1.webp', '/public/tatoos/nb.webp', '/public/tatoos/marin.webp']
   },
   {
     id: 2,
@@ -35,9 +35,9 @@ const initialLocations = [
     lat: 47.2145,
     lng: -1.5594,
     image: 'url-to-image-artistic-skin',
-    styles: ['Traditional', 'Neo-Traditional'],
+    styles: ['Japonais', 'Minimaliste'],
     address: '34 Boulevard Gabriel Guist\'hiau, 44000 Nantes',
-    images: ['url-to-tattoo-traditional1', 'url-to-tattoo-traditional2', 'url-to-tattoo-neo-traditional1', 'url-to-tattoo-neo-traditional2']
+    images: ['/public/tatoos/mini.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap1.webp', '/public/tatoos/mini2.webp']
   },
   {
     id: 3,
@@ -45,9 +45,9 @@ const initialLocations = [
     lat: 48.8606,
     lng: 2.3376,
     image: 'url-to-image-paris-ink',
-    styles: ['Watercolor', 'Geometric'],
+    styles: ['Japonais', 'Minimaliste'],
     address: '15 Rue de Rivoli, 75001 Paris',
-    images: ['url-to-tattoo-watercolor1', 'url-to-tattoo-watercolor2', 'url-to-tattoo-geometric1', 'url-to-tattoo-geometric2']
+    images: ['/public/tatoos/jap2.webp', '/public/tatoos/jap3.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini2.webp']
   },
   {
     id: 4,
@@ -55,9 +55,9 @@ const initialLocations = [
     lat: 48.8642,
     lng: 2.3398,
     image: 'url-to-image-tattoo-art-paris',
-    styles: ['Japanese', 'Dotwork'],
+    styles: ['Marin', 'Blackwork'],
     address: '27 Avenue de l\'Opéra, 75001 Paris',
-    images: ['url-to-tattoo-japanese1', 'url-to-tattoo-japanese2', 'url-to-tattoo-dotwork1', 'url-to-tattoo-dotwork2']
+    images: ['/public/tatoos/marin2.webp', '/public/tatoos/nb1.webp', '/public/tatoos/nb.webp', '/public/tatoos/marin.webp']
   },
   {
     id: 5,
@@ -65,9 +65,9 @@ const initialLocations = [
     lat: 45.7640,
     lng: 4.8357,
     image: 'url-to-image-lyon-ink-masters',
-    styles: ['Portrait', 'Surrealism'],
+    styles: ['Pop Culture', 'Polynésien'],
     address: '45 Quai Saint-Antoine, 69002 Lyon',
-    images: ['url-to-tattoo-portrait1', 'url-to-tattoo-portrait2', 'url-to-tattoo-surrealism1', 'url-to-tattoo-surrealism2']
+    images: ['/public/tatoos/pop1.webp', '/public/tatoos/pop.webp', '/public/tatoos/tribal.webp', '/public/tatoos/tribal1.webp']
   },
   
   // Nouveaux tatoueurs
@@ -78,9 +78,9 @@ const initialLocations = [
     lat: 47.2402,
     lng: -1.5648,
     image: 'url-to-image-nantes-ink-spot',
-    styles: ['Minimalist', 'Linework'],
+    styles: ['Japon', 'Linework'],
     address: '78 Boulevard des Belges, 44300 Nantes',
-    images: ['url-to-tattoo-minimalist1', 'url-to-tattoo-minimalist2', 'url-to-tattoo-linework1', 'url-to-tattoo-linework2']
+    images: ['/public/tatoos/jap3.webp', '/public/tatoos/jap2.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini4.webp']
   },
   {
     id: 7,
@@ -88,9 +88,9 @@ const initialLocations = [
     lat: 47.2108,
     lng: -1.5411,
     image: 'url-to-image-creative-tattoos',
-    styles: ['Neo-Traditional', 'Tribal'],
+    styles: ['Pop', 'Tribal'],
     address: '5 Rue de Strasbourg, 44000 Nantes',
-    images: ['url-to-tattoo-neo-traditional3', 'url-to-tattoo-neo-traditional4', 'url-to-tattoo-tribal1', 'url-to-tattoo-tribal2']
+    images: ['/public/tatoos/pop2.webp', '/public/tatoos/tribal1.webp', '/public/tatoos/tribal.webp', '/public/tatoos/pop3.webp']
   },
   
   // Paris
@@ -100,9 +100,9 @@ const initialLocations = [
     lat: 48.8500,
     lng: 2.3100,
     image: 'url-to-image-eiffel-ink',
-    styles: ['Abstract', 'Script'],
+    styles: ['Japon', 'Linework'],
     address: '22 Rue Cler, 75007 Paris',
-    images: ['url-to-tattoo-abstract1', 'url-to-tattoo-abstract2', 'url-to-tattoo-script1', 'url-to-tattoo-script2']
+    images: ['/public/tatoos/jap3.webp', '/public/tatoos/jap2.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini4.webp']
   },
   {
     id: 9,
@@ -110,9 +110,9 @@ const initialLocations = [
     lat: 48.8867,
     lng: 2.3431,
     image: 'url-to-image-montmartre-tattoos',
-    styles: ['Dotwork', 'Watercolor'],
+    styles: ['Pop', 'Tribal'],
     address: '10 Rue Tholozé, 75018 Paris',
-    images: ['url-to-tattoo-dotwork3', 'url-to-tattoo-dotwork4', 'url-to-tattoo-watercolor3', 'url-to-tattoo-watercolor4']
+    images: ['/public/tatoos/pop2.webp', '/public/tatoos/tribal1.webp', '/public/tatoos/tribal.webp', '/public/tatoos/pop3.webp']
   },
   
   // Lyon
@@ -124,7 +124,7 @@ const initialLocations = [
     image: 'url-to-image-old-town-ink',
     styles: ['Black and Grey', 'Traditional'],
     address: '16 Rue Saint-Jean, 69005 Lyon',
-    images: ['url-to-tattoo-black-and-grey1', 'url-to-tattoo-black-and-grey2', 'url-to-tattoo-traditional3', 'url-to-tattoo-traditional4']
+    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
   },
   {
     id: 11,
@@ -132,9 +132,9 @@ const initialLocations = [
     lat: 45.7535,
     lng: 4.8480,
     image: 'url-to-image-modern-tattoo-lyon',
-    styles: ['New School', 'Biomechanical'],
+    styles: ['Japon', 'Linework'],
     address: '28 Rue de Marseille, 69007 Lyon',
-    images: ['url-to-tattoo-new-school1', 'url-to-tattoo-new-school2', 'url-to-tattoo-biomechanical1', 'url-to-tattoo-biomechanical2']
+    images: ['/public/tatoos/jap3.webp', '/public/tatoos/jap2.webp', '/public/tatoos/mini3.webp', '/public/tatoos/mini4.webp']
   },
   
   // Marseille
@@ -146,7 +146,7 @@ const initialLocations = [
     image: 'url-to-image-marseille-inked',
     styles: ['Realism', 'Tribal'],
     address: '21 Rue de la République, 13002 Marseille',
-    images: ['url-to-tattoo-realism3', 'url-to-tattoo-realism4', 'url-to-tattoo-tribal3', 'url-to-tattoo-tribal4']
+    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
   },
   
   // Bordeaux
@@ -158,7 +158,7 @@ const initialLocations = [
     image: 'url-to-image-bordeaux-body-art',
     styles: ['Geometric', 'Blackwork'],
     address: '12 Rue Sainte-Catherine, 33000 Bordeaux',
-    images: ['url-to-tattoo-geometric3', 'url-to-tattoo-geometric4', 'url-to-tattoo-blackwork3', 'url-to-tattoo-blackwork4']
+    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
   },
   
   // Lille
@@ -170,7 +170,7 @@ const initialLocations = [
     image: 'url-to-image-lille-tattoo-studio',
     styles: ['Watercolor', 'Portrait'],
     address: '8 Rue de Béthune, 59800 Lille',
-    images: ['url-to-tattoo-watercolor5', 'url-to-tattoo-watercolor6', 'url-to-tattoo-portrait3', 'url-to-tattoo-portrait4']
+    images: ['/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp', '/public/tatoos/jap.webp']
   }
 ];
 
@@ -224,6 +224,25 @@ const Map = () => {
     setMap(mapInstance);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      const address = inputRef.current.value;
+      const geocoder = new window.google.maps.Geocoder();
+      geocoder.geocode({ address: address }, (results, status) => {
+        if (status === 'OK' && results[0]) {
+          const newCenter = {
+            lat: results[0].geometry.location.lat(),
+            lng: results[0].geometry.location.lng()
+          };
+          map.panTo(newCenter);
+          map.setZoom(12);
+        } else {
+          alert('Adresse introuvable');
+        }
+      });
+    }
+  };
+
   return (
     <div>
       <LoadScriptNext
@@ -237,13 +256,11 @@ const Map = () => {
           onLoad={handleLoad}
         />
       </LoadScriptNext>
-      {selectedTattooArtist && (
-        <TattooDetails artist={selectedTattooArtist} />
-      )}
       <input
         ref={inputRef}
         type="text"
         placeholder="Rechercher un lieu en France"
+        onKeyPress={handleKeyPress}
         style={{
           width: '80%',
           padding: '10px',
@@ -253,6 +270,9 @@ const Map = () => {
           borderRadius: '8px', // Rounded corners
         }}
       />
+      {selectedTattooArtist && (
+        <TattooDetails artist={selectedTattooArtist} />
+      )}
     </div>
   );
 };

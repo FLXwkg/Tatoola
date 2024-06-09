@@ -16,7 +16,6 @@ import {
   DropdownItem,
   Image
 } from "@nextui-org/react";
-import { Logo } from "./Logo"
 import { useAuth } from "../../contexts/authContext";
 
 function Header() {
@@ -37,39 +36,76 @@ function Header() {
         />
         <NavbarBrand>
           <Link href="/" className="text-inherit">
-            <Logo />
-            <p className="font-bold text-xl text-inherit ml-2">Tattoola</p>
+          <Image
+              src="/public/logos/logo.png"
+              alt="Tattoola Logo"
+              className="h-10 w-auto ml-[-5px]"
+            />
           </Link>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link href="/tattoo-finder" className="text-zinc-50">
-            TattooFinder
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/tattoo-view" className="text-zinc-50">
-            TattooView
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/tattoo-mag" className="text-zinc-50">
-            TattooMag
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/tattoo-talk" className="text-zinc-50">
-            TattooTalk
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/become_artist" className="text-zinc-50">
-            Vous êtes tatoueur ?
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
+  <NavbarItem>
+    <Link
+      href="/tattoo-finder"
+      className="text-zinc-50 group relative hover:bg-white hover:text-black px-3 py-2 rounded-md"
+    >
+      <span className="block group-hover:hidden">TattooFinder</span>
+      <span className="hidden group-hover:block">
+        TattooFinder
+        <span className="block text-xs">Recherche</span>
+      </span>
+    </Link>
+  </NavbarItem>
+  <NavbarItem>
+    <Link
+      href="/tattoo-view"
+      className="text-zinc-50 group relative hover:bg-white hover:text-black px-3 py-2 rounded-md"
+    >
+      <span className="block group-hover:hidden">TattooView</span>
+      <span className="hidden group-hover:block">
+        TattooView
+        <span className="block text-xs">V.R</span>
+      </span>
+    </Link>
+  </NavbarItem>
+  <NavbarItem>
+    <Link
+      href="/tattoo-mag"
+      className="text-zinc-50 group relative hover:bg-white hover:text-black px-3 py-2 rounded-md"
+    >
+      <span className="block group-hover:hidden">TattooMag</span>
+      <span className="hidden group-hover:block">
+        TattooMag
+        <span className="block text-xs">Blog</span>
+      </span>
+    </Link>
+  </NavbarItem>
+  <NavbarItem>
+    <Link
+      href="/tattoo-talk"
+      className="text-zinc-50 group relative hover:bg-white hover:text-black px-3 py-2 rounded-md"
+    >
+      <span className="block group-hover:hidden">TattooTalk</span>
+      <span className="hidden group-hover:block">
+        TattooTalk
+        <span className="block text-xs">Chat</span>
+      </span>
+    </Link>
+  </NavbarItem>
+  <NavbarItem>
+    <Link
+      href="/become_artist"
+      className="text-zinc-50 group relative hover:bg-white hover:text-black px-3 py-2 rounded-md"
+    >
+      <span className="block group-hover:hidden">Vous êtes tatoueur ?</span>
+      <span className="hidden group-hover:block">
+        Vous êtes tatoueur ?
+      </span>
+    </Link>
+  </NavbarItem>
+</NavbarContent>
 
       <NavbarContent as="div" justify="end">
         {isLoggedIn ? (
@@ -114,27 +150,27 @@ function Header() {
 
       <NavbarMenu>
         <NavbarMenuItem>
-          <Link href="/tattoo-finder" className="text-zinc-50">
+          <Link href="/tattoo-finder" className="text-zinc-800">
             TattooFinder
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/tattoo-view" className="text-zinc-50">
+          <Link href="/tattoo-view" className="text-zinc-800">
             TattooView
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/tattoo-mag" className="text-zinc-50">
+          <Link href="/tattoo-mag" className="text-zinc-800">
             TattooMag
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/tattoo-talk" className="text-zinc-50">
+          <Link href="/tattoo-talk" className="text-zinc-800">
             TattooTalk
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/" className="text-zinc-50">
+          <Link href="/" className="text-zinc-800">
             Vous êtes tatoueurs ?
           </Link>
         </NavbarMenuItem>

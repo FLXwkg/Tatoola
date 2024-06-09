@@ -14,7 +14,7 @@ import TattooNearby from '../components/tattoo/TattooNearby';
 const HomePage = () => {
   return (
     <div>
-      <main className="container mx-auto p-4">
+      <main className="container mx-auto p-4 bg-zinc-100">
         <Map />
         <TattooNearby />
         <Proposals />
