@@ -11,6 +11,7 @@ import TattooNearby from '../components/tattoo/TattooNearby';
 
 
 
+
 const HomePage = () => {
   return (
     <div>

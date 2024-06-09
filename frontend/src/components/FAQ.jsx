@@ -43,7 +43,7 @@ const faqItems = [
 const FAQ = () => {
   return (
     <div className="my-8 bg-cover " style={{ backgroundImage: `url('/public/backgrounds/Calque_1.png')` }}>
-      <h2 className="text-2xl font-bold mb-8 text-center">FAQ</h2>
+      <h2 className="text-2xl font-bold mb-8 text-center text-zinc-50 bg-zinc-800">FAQ</h2>
       <div className="max-w-2xl mx-auto">
         <Accordion variant="shadow">
           {faqItems.map((item) => (
